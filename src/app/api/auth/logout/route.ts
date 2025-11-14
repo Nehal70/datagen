@@ -1,6 +1,7 @@
-// Template route: Logout a user
-// Should invalidate refresh token (DB/blacklist/rotation) and clear cookies if used.
+import { clearRefreshTokenCookie } from '@/lib/auth';
+import { createSuccessResponse } from '@/lib/validation';
 
+<<<<<<< Updated upstream
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { jwtVerify } from "jose";
@@ -68,4 +69,16 @@ export async function POST(request: Request): Promise<Response> {
   });
 
   return res;
+=======
+export async function POST(_request: Request): Promise<Response> {
+  try {
+    // Clear refresh token cookie
+    await clearRefreshTokenCookie();
+
+    return createSuccessResponse({ message: 'Logged out successfully' });
+  } catch (error) {
+    console.error('Logout error:', error);
+    return createSuccessResponse({ message: 'Logged out successfully' });
+  }
+>>>>>>> Stashed changes
 }
