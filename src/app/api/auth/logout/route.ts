@@ -1,6 +1,5 @@
 import { clearRefreshTokenCookie } from '@/lib/auth';
 import { createSuccessResponse } from '@/lib/validation';
-<<<<<<< Updated upstream
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { jwtVerify } from "jose";
