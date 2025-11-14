@@ -80,5 +80,8 @@ export async function POST(_request: Request): Promise<Response> {
     console.error('Logout error:', error);
     return createSuccessResponse({ message: 'Logged out successfully' });
   }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
