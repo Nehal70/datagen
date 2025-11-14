@@ -81,6 +81,9 @@ export async function POST(_request: Request): Promise<Response> {
     return createSuccessResponse({ message: 'Logged out successfully' });
   }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
