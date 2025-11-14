@@ -4,9 +4,6 @@ import { signAccessToken, signRefreshToken, setRefreshTokenCookie } from '@/lib/
 import { loginSchema, createErrorResponse, createSuccessResponse } from '@/lib/validation';
 import { User } from '@/app/types';
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { SignJWT } from "jose";
@@ -110,7 +107,7 @@ export async function POST(request: Request): Promise<Response> {
     return NextResponse.json({ error: "Internal server error." }, { status: 500 });
   }
 }
-=======
+
 export async function POST(request: Request): Promise<Response> {
   try {
     const body = await request.json();
@@ -177,8 +174,7 @@ export async function POST(request: Request): Promise<Response> {
     return createErrorResponse('Internal server error', 500);
   }
 }
->>>>>>> Stashed changes
-=======
+
 export async function POST(request: Request): Promise<Response> {
   try {
     const body = await request.json();
@@ -245,8 +241,43 @@ export async function POST(request: Request): Promise<Response> {
     return createErrorResponse('Internal server error', 500);
   }
 }
->>>>>>> Stashed changes
-=======
+
+export async function POST(request: Request): Promise<Response> {
+  try {
+    const body = await request.json();
+    const validationResult = loginSchema.safeParse(body);
+
+    if (!validationResult.success) {
+      return createErrorResponse(
+        validationResult.error.errors.map(e => e.message).join(', '),
+        400
+      );
+    }
+
+      email: user.email,
+      role: user.role,
+    });
+
+    // Set refresh token cookie
+    await setRefreshTokenCookie(refreshToken);
+
+    // Return user metadata (excluding password)
+    const userResponse = {
+      id: userId,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      createdAt: user.createdAt,
+      accessToken,
+    };
+
+    return createSuccessResponse(userResponse);
+  } catch (error) {
+    console.error('Login error:', error);
+    return createErrorResponse('Internal server error', 500);
+  }
+}
+
 export async function POST(request: Request): Promise<Response> {
   try {
     const body = await request.json();
@@ -313,4 +344,3 @@ export async function POST(request: Request): Promise<Response> {
     return createErrorResponse('Internal server error', 500);
   }
 }
->>>>>>> Stashed changes

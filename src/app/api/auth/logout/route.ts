@@ -1,6 +1,5 @@
 import { clearRefreshTokenCookie } from '@/lib/auth';
 import { createSuccessResponse } from '@/lib/validation';
-
 <<<<<<< Updated upstream
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
@@ -69,7 +68,6 @@ export async function POST(request: Request): Promise<Response> {
   });
 
   return res;
-=======
 export async function POST(_request: Request): Promise<Response> {
   try {
     // Clear refresh token cookie
@@ -80,11 +78,4 @@ export async function POST(_request: Request): Promise<Response> {
     console.error('Logout error:', error);
     return createSuccessResponse({ message: 'Logged out successfully' });
   }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
