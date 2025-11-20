@@ -27,7 +27,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+<<<<<<< Updated upstream
         {children}
+=======
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1 overflow-y-auto">
+            {children}
+          </main>
+          <Footer />
+        </div>
+>>>>>>> Stashed changes
       </body>
     </html>
   );
