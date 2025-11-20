@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="56" height="56" rx="20" fill="#DCFCE7"/>
+  <ellipse cx="32" cy="22" rx="9" ry="4.5" stroke="#16A34A" stroke-width="2.6" />
+  <path
+    d="M23 22v10c0 2.5 4 4.5 9 4.5s9-2 9-4.5v-10"
+    stroke="#16A34A"
+    stroke-width="2.6"
+    fill="none"
+  />
+  <path
+    d="M23 32v10c0 2.5 4 4.5 9 4.5s9-2 9-4.5v-10"
+    stroke="#16A34A"
+    stroke-width="2.6"
+    fill="none"
+  />
+</svg>
+
+
